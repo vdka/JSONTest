@@ -1,24 +1,5 @@
 import JSON
 
-// PRE   0.0231777
-// POST
-
-/*
-
-let bytes = loadFixture("large")
-
-var total = 0.0
-
-for _ in 0..<100 {
-  total += try measure {
-    _ = try JSON.Parser.parse(bytes)
-  }
-}
-
-print("vdka/json took \(total / 100)s")
-
-*/
-
 func memdump<T>(_ input: T, nBytes: Int = MemoryLayout<T>.size) {
 
   var input = input
@@ -54,4 +35,29 @@ memdump(JSON.null)
 
 print("0xBADF00D")
 memdump(0xBADF00D as JSON)
+
+
+/*
+JSON is 25 bytes
+{'key': 5}
+30 3b c0 73 8f 7f 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00
+[5, 2, 'value', true]
+01 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+02
+null
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+06
+0xBADF00D
+0d f0 ad 0b 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+04
+*/
 
