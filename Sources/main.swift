@@ -45,6 +45,25 @@ memdump(0xBADF00D as JSON)
 print("123.456")
 memdump(123.456 as JSON)
 
+print("\n\n\n")
+
+enum Foo {
+    case array([Foo])
+    case null
+    case
+}
+
+//let foo = Foo.bar((0xBADF00D, 1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+//memdump(foo)
+
+print("\n\n\n")
+let foo2 = Foo.null
+
+print(MemoryLayout<Foo>.size)
+
+memdump(foo2)
+
 /*
 public enum JSON {
   case object([String: JSON])
