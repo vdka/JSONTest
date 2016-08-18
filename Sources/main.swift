@@ -28,7 +28,7 @@ print("{'key': 5}")
 memdump(["key": 5] as JSON)
 
 print("[5, 2, 'value', true]")
-memdump([5, 2, "value", true])
+memdump([5, 2, "value", true] as JSON)
 
 print("true")
 memdump(true as JSON)
@@ -42,12 +42,15 @@ memdump(0xBADF00D as JSON)
 /*
 JSON is 25 bytes
 {'key': 5}
-e0 69 40 90 fc 7f 00 00
+00 2d 60 b2 8d 7f 00 00
 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00
 00
 [5, 2, 'value', true]
-10 0f 60 90 fc 7f 00 00
+10 2e 60 b2 8d 7f 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+01
 true
 01 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00
