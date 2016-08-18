@@ -45,6 +45,17 @@ memdump(0xBADF00D as JSON)
 print("123.456")
 memdump(123.456 as JSON)
 
+/*
+public enum JSON {
+  case object([String: JSON])
+  case array([JSON])
+  case null
+  case bool(Bool)
+  case string(String)
+  case integer(Int64)
+  case double(Double)
+}
+*/
 
 /*
 JSON is 25 bytes
