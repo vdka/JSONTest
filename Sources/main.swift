@@ -22,47 +22,46 @@ func memdump<T>(_ input: T, nBytes: Int = MemoryLayout<T>.size) {
   }
 }
 
-print("JSON is \(MemoryLayout<JSON>.size) bytes")
+//print("JSON is \(MemoryLayout<JSON>.size) bytes")
+//
+//print("{'key': 5}")
+//memdump(["key": 5] as JSON)
+//
+//print("[5, 2, 'value', true]")
+//memdump([5, 2, "value", true] as JSON)
+//
+//print("null")
+//memdump(JSON.null)
+//
+//print("true")
+//memdump(true as JSON)
+//
+//print("'hello world'")
+//memdump("Hello world" as JSON)
+//
+//print("0xBADF00D")
+//memdump(0xBADF00D as JSON)
+//
+//print("123.456")
+//memdump(123.456 as JSON)
+//
+//print("\n\n\n")
 
-print("{'key': 5}")
-memdump(["key": 5] as JSON)
-
-print("[5, 2, 'value', true]")
-memdump([5, 2, "value", true] as JSON)
-
-print("null")
-memdump(JSON.null)
-
-print("true")
-memdump(true as JSON)
-
-print("'hello world'")
-memdump("Hello world" as JSON)
-
-print("0xBADF00D")
-memdump(0xBADF00D as JSON)
-
-print("123.456")
-memdump(123.456 as JSON)
-
-print("\n\n\n")
-
-enum Foo {
-    case array([Foo])
-    case null
-    case
-}
+print("size of Swift.String is \(MemoryLayout<String>.size)")
 
 //let foo = Foo.bar((0xBADF00D, 1, 2, 3, 4, 5, 6, 7, 8, 9))
 
 //memdump(foo)
 
 print("\n\n\n")
-let foo2 = Foo.null
 
-print(MemoryLayout<Foo>.size)
+print("Swift.String is \(MemoryLayout<String>.size) bytes")
+print("Swift.String alignment is \(MemoryLayout<String>.alignment) bytes")
+print("Swift.String stride is \(MemoryLayout<String>.stride(ofValue: "")) bytes")
 
-memdump(foo2)
+let string = "Hello, World!"
+
+memdump(string)
 
 /*
 public enum JSON {
